@@ -36,8 +36,6 @@ public class Rectangle {
     private var rectangleVertexBuffer: MTLBuffer!
     private var rectangleIndexBuffer: MTLBuffer!
     
-    private var rectangleTexture: MTLTexture!
-    
     /**
      The MTLRenderPipelineDescriptor object specifies the rendering configuration state used during a rendering pass, including rasterization (such as multisampling), visibility, blending, tessellation, and graphics function state. Use standard allocation and initialization techniques to create a MTLRenderPipelineDescriptor object. A MTLRenderPipelineDescriptor object is later used to create a MTLRenderPipelineState object
      */

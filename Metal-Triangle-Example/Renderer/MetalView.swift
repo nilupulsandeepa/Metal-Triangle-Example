@@ -32,6 +32,10 @@ public class MetalView: MTKView {
         self.delegate = self.renderer
     }
     
+    public func changeRenderType(to type: RenderType) {
+        self.renderer.changeRenderType(to: type)
+    }
+    
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

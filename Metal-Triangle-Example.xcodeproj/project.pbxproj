@@ -18,6 +18,8 @@
 		67975FA22615C97100F4EE14 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67975FA12615C97100F4EE14 /* Triangle.swift */; };
 		67975FA52615CA8000F4EE14 /* TypeDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67975FA42615CA8000F4EE14 /* TypeDef.swift */; };
 		67975FA82615CE8500F4EE14 /* Shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 67975FA72615CE8500F4EE14 /* Shader.metal */; };
+		67975FAD2615ED6900F4EE14 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67975FAC2615ED6900F4EE14 /* Rectangle.swift */; };
+		67975FB02615F10C00F4EE14 /* RenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67975FAF2615F10C00F4EE14 /* RenderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		67975FA12615C97100F4EE14 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		67975FA42615CA8000F4EE14 /* TypeDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDef.swift; sourceTree = "<group>"; };
 		67975FA72615CE8500F4EE14 /* Shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shader.metal; sourceTree = "<group>"; };
+		67975FAC2615ED6900F4EE14 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		67975FAF2615F10C00F4EE14 /* RenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				67975FA12615C97100F4EE14 /* Triangle.swift */,
 				67975FA42615CA8000F4EE14 /* TypeDef.swift */,
 				67975FA72615CE8500F4EE14 /* Shader.metal */,
+				67975FAC2615ED6900F4EE14 /* Rectangle.swift */,
+				67975FAF2615F10C00F4EE14 /* RenderType.swift */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -161,8 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				67975F9B2615C4A600F4EE14 /* MetalView.swift in Sources */,
+				67975FB02615F10C00F4EE14 /* RenderType.swift in Sources */,
 				67975F892615C48700F4EE14 /* ViewController.swift in Sources */,
 				67975FA52615CA8000F4EE14 /* TypeDef.swift in Sources */,
+				67975FAD2615ED6900F4EE14 /* Rectangle.swift in Sources */,
 				67975F852615C48700F4EE14 /* AppDelegate.swift in Sources */,
 				67975FA82615CE8500F4EE14 /* Shader.metal in Sources */,
 				67975FA22615C97100F4EE14 /* Triangle.swift in Sources */,

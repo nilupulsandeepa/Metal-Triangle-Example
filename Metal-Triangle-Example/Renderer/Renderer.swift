@@ -21,6 +21,9 @@ public class Renderer: NSObject {
     private var commandQueue: MTLCommandQueue!
     
     private var triangle: Triangle!
+    private var rectangle: Rectangle!
+    
+    private var renderType: RenderType = .Triangle
     
     init(withDevice device: MTLDevice) {
         super.init()
@@ -28,6 +31,11 @@ public class Renderer: NSObject {
         self.mtlDevice = device
         self.commandQueue = self.mtlDevice.makeCommandQueue()
         self.triangle = Triangle(withDevice: self.mtlDevice)
+        self.rectangle = Rectangle(withDevice: self.mtlDevice)
+    }
+    
+    public func changeRenderType(to type: RenderType) {
+        self.renderType = type
     }
 }
 
@@ -49,7 +57,11 @@ extension Renderer: MTKViewDelegate {
         
         let renderCommandEncoder: MTLRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
         
-        self.triangle.draw(renderCommandEncoder:  renderCommandEncoder)
+        if (self.renderType == .Triangle) {
+            self.triangle.draw(renderCommandEncoder:  renderCommandEncoder)
+        } else {
+            self.rectangle.draw(renderCommandEncoder: renderCommandEncoder)
+        }
         
         renderCommandEncoder.endEncoding()
         

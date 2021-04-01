@@ -12,10 +12,10 @@ public class Rectangle {
     
     private var mtlDevice: MTLDevice!
     /**
-     Triangle vertices converted to normalized device coordinates
+     rectangle vertices converted to normalized device coordinates
      https://developer.apple.com/documentation/metal/using_a_render_pipeline_to_render_primitives
     */
-    private var triangleVertexData: [Float2] = [
+    private var rectangleVertexData: [Float2] = [
         Float2(x: -0.5, y: 0.5),
         Float2(x: -0.5, y: -0.5),
         Float2(x: 0.5, y: -0.5),
@@ -25,7 +25,7 @@ public class Rectangle {
     /**
      Order of vertices
      */
-    private var triangleIndexData: [UInt16] = [
+    private var rectangleIndexData: [UInt16] = [
         0, 1, 2,
         0, 2, 3
     ]
@@ -33,8 +33,8 @@ public class Rectangle {
     /**
      MTLBuffers for vertex and index data
      */
-    private var triangleVertexBuffer: MTLBuffer!
-    private var triangleIndexBuffer: MTLBuffer!
+    private var rectangleVertexBuffer: MTLBuffer!
+    private var rectangleIndexBuffer: MTLBuffer!
     
     private var rectangleTexture: MTLTexture!
     
@@ -45,8 +45,8 @@ public class Rectangle {
     
     init(withDevice device: MTLDevice) {
         self.mtlDevice = device
-        self.triangleVertexBuffer = self.mtlDevice.makeBuffer(bytes: self.triangleVertexData, length: MemoryLayout<Float2>.stride * self.triangleVertexData.count, options: [.storageModeShared])
-        self.triangleIndexBuffer = self.mtlDevice.makeBuffer(bytes: self.triangleIndexData, length: MemoryLayout<UInt16>.stride * self.triangleIndexData.count, options: [.storageModeShared])
+        self.rectangleVertexBuffer = self.mtlDevice.makeBuffer(bytes: self.rectangleVertexData, length: MemoryLayout<Float2>.stride * self.rectangleVertexData.count, options: [.storageModeShared])
+        self.rectangleIndexBuffer = self.mtlDevice.makeBuffer(bytes: self.rectangleIndexData, length: MemoryLayout<UInt16>.stride * self.rectangleIndexData.count, options: [.storageModeShared])
         
         let library: MTLLibrary = self.mtlDevice.makeDefaultLibrary()!
         
@@ -74,9 +74,9 @@ public class Rectangle {
     }
     
     public func draw(renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setVertexBuffer(self.triangleVertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder.setVertexBuffer(self.rectangleVertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setRenderPipelineState(self.renderPipelineState)
-        renderCommandEncoder.drawIndexedPrimitives(type: .triangle, indexCount: self.triangleIndexData.count, indexType: .uint16, indexBuffer: self.triangleIndexBuffer, indexBufferOffset: 0)
+        renderCommandEncoder.drawIndexedPrimitives(type: .triangle, indexCount: self.rectangleIndexData.count, indexType: .uint16, indexBuffer: self.rectangleIndexBuffer, indexBufferOffset: 0)
     }
 }
 
